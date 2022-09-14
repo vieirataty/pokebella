@@ -10,12 +10,14 @@ import { SharedModule } from '../shared/shared.module';
 //Pages
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
+import { BatalhaComponent } from './batalha/batalha.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     DetailsComponent,
+    BatalhaComponent
   ],
   imports: [
     CommonModule,

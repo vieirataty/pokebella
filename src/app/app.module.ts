@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 //Modules
 import { PagesModule } from './pages/pages.module';
 
+
 //Components
 @NgModule({
   declarations: [
