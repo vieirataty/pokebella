@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PokeDesafianteComponent } from '../poke-desafiante/poke-desafiante.component';
 
 @Component({
   selector: 'poke-batalha',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokeBatalhaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(
+      PokeDesafianteComponent
+    )
   }
 
 }

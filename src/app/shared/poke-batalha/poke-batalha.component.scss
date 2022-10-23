@@ -1,5 +1,17 @@
 @import '../../../config-scss/rem-calc.scss';
 
-.botaoBatalha{
+.botaoBatalha {
     padding-top: rem-calc(20);
+    width: 100%;
+    background: none;
+    border: none;
+    font-weight: 400;
+
+    font-size: rem-calc(18); //
+
+    color: var(--branco);
+
+    &::button {
+        color: var(--branco);
+    }
 }

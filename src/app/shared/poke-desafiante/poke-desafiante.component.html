@@ -1,0 +1,53 @@
+<!--O mat-dialog seria só pra escolher o desafiante?
+        Quando escrever o nome do pokemon, é preciso aparecer
+    o card como na busca pokemon. Logo depois ativar botão de batalhar.
+    O botão batalhar leva para página de batalha. -->
+
+    <!--Ver alterar esquemas de cores material angular-->
+<h2 mat-dialog-title>Batalha de Pokemons</h2>
+<mat-dialog-content class="mat-typography desafiante">
+    
+    <form>
+        <input type="text" #input (keyup)="search(input.value)" placeholder="Escolha seu Pokemon Desafiante">
+        <img src="assets/icons/Vector.svg" alt="Buscar Pokemon">
+    </form>
+    <div>
+        <div class="escolheDesafiante">
+            <ng-template [ngIf]="isLoading">
+                <section class="pokemon__names">
+                    <h1 class="slideInLeft">{{pokemon[0].name}}</h1>
+                    <h2 class="slideInRight">{{pokemon[1].names[0].name}}</h2>
+                </section>
+            
+                <section class="pokemon__status">
+                    <img 
+                    [src]="pokemon[0].sprites.other.dream_world.front_default" 
+                    [alt]="pokemon[0].name"
+                    class="slideInDown">
+            
+                    <article class="pokemon__status__statistics fadeIn">
+                        <section>
+                            <h3>Estatísticas</h3>
+            
+                            <ol>
+                                <li *ngFor="let value of pokemon[0].stats">
+                                    {{ value.stat.name}}
+            
+                                    <strong>
+                                        {{ value.base_stat}}
+                                    </strong>
+            
+                                </li>
+                            </ol>
+                        </section>               
+                    </article>
+                </section>
+            </ng-template>            
+        </div>        
+    </div>
+    </mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="warn">Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="batalhar">Batalhar</button>
+</mat-dialog-actions>
+
