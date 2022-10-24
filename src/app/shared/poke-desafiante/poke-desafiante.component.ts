@@ -17,6 +17,8 @@ export class PokeDesafianteComponent implements OnInit {
   public pokemon: any;
   public isLoading: boolean = false;
   public apiError: boolean = false;
+  public getAllPokemons: any;
+  private setAllPokemons: any;
 
   constructor(
     private activatedRouter: ActivatedRoute,
@@ -25,10 +27,27 @@ export class PokeDesafianteComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPokemon();
+    this.pokeApiService.apiListAllPokemons.subscribe(
+      res => {
+        this.setAllPokemons = res.results;
+        this.getAllPokemons = this.setAllPokemons;
+      },
+      error => {
+        this.apiError = true;
+      }
+    );
   }
 
   public search(value: string) {
     this.emitSearch.emit(value);
+  }
+
+  public getSearch(value: string){
+    const filter = this.setAllPokemons.filter( (res: any) => {
+      return !res.name.indexOf(value.toLowerCase());
+    });
+
+    this.getAllPokemons = filter;
   }
 
   public getPokemon() {

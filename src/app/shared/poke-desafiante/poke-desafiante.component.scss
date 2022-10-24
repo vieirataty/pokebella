@@ -1,152 +1,235 @@
-@import '../../../config-scss/rem-calc.scss';
-@import '../../../config-scss/variables.scss';
+@import "../../../config-scss/rem-calc.scss";
+@import "../../../config-scss/variables.scss";
+
+$padding: rem-calc(20);
 
 :host {
-    .desafiante {
-        width: 500px;
-        height: 600px;
-    }
 
-    .warn{
-        background-color: var(--warn-color);
-        color: var(--branco);
-    }
+  .desafiante {
+    width: 450px;
+    height: 300px;
+  }
 
-    .batalhar{
-        background-color: var(--primary-color);
-        color: var(--branco);
-    }
+  .lupa{
+    justify-content: right;
+  }
 
-    form {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .warn {
+    background-color: var(--warn-color);
+    color: var(--branco);
+  }
 
-        padding: rem-calc(15) rem-calc(20);
-        background-color: var(--secondary-color);
+  .batalhar {
+    background-color: var(--primary-color);
+    color: var(--branco);
+  }
 
-        border-radius: rem-calc(10);
+  .listagem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: $padding 0;
 
-        input {
-            width: 95%;
-            background: none;
-            border: none;
+    .pokemon {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--branco);
 
-            font-size: rem-calc(18); //
+      width: calc(85% - 2.813rem);
+      margin-bottom: rem-calc(10);
+      padding: $padding;
+      height: rem-calc(250 - 40);
 
-            color: var(--branco);
+      border-radius: rem-calc(10);
 
-            &::placeholder {
-                color: var(--branco);
-            }
+      text-decoration: none;
+      color: var(--primary-color);
+
+      &__status {
+        h2 {
+          font-size: rem-calc(25);
+          font-style: italic;
+          font-weight: 700;
+          text-transform: capitalize;
+          margin-bottom: rem-calc(10);
         }
-    }
+        ul {
+          display: flex;
+          flex-direction: column;
 
-    main {
-        max-width: rem-calc(600);
-        margin-top: rem-calc(40);
+          li {
+            background: var(--cinza);
+            font-size: rem-calc(14);
 
-        .pokemon__names {
-            position: relative;
             display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
+            justify-content: center;
+            align-items: center;
 
-            height: 75px;
+            border-radius: rem-calc(50);
 
-            padding: 0 rem-calc(30);
-
-            h1 {
-                color: var(--branco);
-                font-size: rem-calc(32);
-                text-transform: capitalize;
-            }
-
-            h2 {
-                position: absolute;
-                font-weight: 100;
-                top: 0;
-                font-size: rem-calc(60);
-                color: rgba(255, 255, 255, 0.3);
-            }
+            width: rem-calc(60);
+            margin-bottom: rem-calc(5);
+          }
         }
+      }
 
-        .pokemon__status {
-            position: relative;
+      &__image {
+        position: absolute;
 
-            img {
-                position: absolute;
-                top: rem-calc(-90);
-                left: rem-calc(30);
-                max-width: rem-calc(130);
-                z-index: 10;
-            }
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-            &__statistics {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+        height: rem-calc(150);
+        width: rem-calc(125);
 
-                background: var(--branco);
+        right: $padding;
+        bottom: $padding;
 
-                min-height: 43.9vh;
-                margin-top: rem-calc(10);
+        background: url("../../../assets/bg/background-list-pokemon.svg")
+          no-repeat;
 
-                padding: rem-calc(110) rem-calc(35) rem-calc(30);
-                border-radius: rem-calc(50) rem-calc(50) 0 0;
-
-                h3 {
-                    margin-bottom: rem-calc(20);
-
-                    font-style: italic;
-                    font-weight: 700;
-                    font-size: rem-calc(32);
-                    text-decoration: underline;
-                    color: var(--secondary-color);
-                }
-
-                ol {
-                    li {
-                        display: flex;
-                        justify-content: space-between;
-
-                        font-size: rem-calc(18);
-                        line-height: 130%;
-                    }
-                }
-            }
+        img {
+          width: rem-calc(110);
         }
-
-        @media (max-width: 320px) {
-            margin-top: rem-calc(10);
-
-            .pokemon__names {
-                h1 {
-                    font-size: rem-calc(20);
-                }
-
-                h2 {
-                    top: rem-calc(35);
-                    font-size: rem-calc(20);
-                }
-            }
-
-            .pokemon__status {
-                position: relative;
-
-                img {
-                    position: absolute;
-                    top: rem-calc(-80);
-                    left: rem-calc(0);
-                    max-width: rem-calc(100);
-                }
-
-                &__statistics {
-                    min-height: 54.7vh;
-                    padding-top: rem-calc(50);
-                }
-            }
-        }
-
+      }
     }
+  }
+
+  //Manter form de busca fixo sem rolar com barra de rolagem
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: rem-calc(15) rem-calc(20);
+    background-color: var(--secondary-color);
+
+    border-radius: rem-calc(10);
+
+    input {
+      width: 95%;
+      background: none;
+      border: none;
+
+      font-size: rem-calc(18); //
+
+      color: var(--branco);
+
+      &::placeholder {
+        color: var(--branco);
+      }
+    }
+  }
+
+  main {
+    max-width: rem-calc(600);
+    margin-top: rem-calc(40);
+
+    .pokemon__names {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      height: 75px;
+
+      padding: 0 rem-calc(30);
+
+      h1 {
+        color: var(--branco);
+        font-size: rem-calc(32);
+        text-transform: capitalize;
+      }
+
+      h2 {
+        position: absolute;
+        font-weight: 100;
+        top: 0;
+        font-size: rem-calc(60);
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    .pokemon__status {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: rem-calc(-90);
+        left: rem-calc(30);
+        max-width: rem-calc(130);
+        z-index: 10;
+      }
+
+      &__statistics {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background: var(--branco);
+
+        min-height: 43.9vh;
+        margin-top: rem-calc(10);
+
+        padding: rem-calc(110) rem-calc(35) rem-calc(30);
+        border-radius: rem-calc(50) rem-calc(50) 0 0;
+
+        h3 {
+          margin-bottom: rem-calc(20);
+
+          font-style: italic;
+          font-weight: 700;
+          font-size: rem-calc(32);
+          text-decoration: underline;
+          color: var(--secondary-color);
+        }
+
+        ol {
+          li {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: rem-calc(18);
+            line-height: 130%;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 320px) {
+      margin-top: rem-calc(10);
+
+      .pokemon__names {
+        h1 {
+          font-size: rem-calc(20);
+        }
+
+        h2 {
+          top: rem-calc(35);
+          font-size: rem-calc(20);
+        }
+      }
+
+      .pokemon__status {
+        position: relative;
+
+        img {
+          position: absolute;
+          top: rem-calc(-80);
+          left: rem-calc(0);
+          max-width: rem-calc(100);
+        }
+
+        &__statistics {
+          min-height: 54.7vh;
+          padding-top: rem-calc(50);
+        }
+      }
+    }
+  }
 }

@@ -8,7 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { PokeHeaderComponent } from './poke-header/poke-header.component';
 import { PokeSearchComponent } from './poke-search/poke-search.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
-import { PokeBatalhaComponent } from './poke-batalha/poke-batalha.component';
+import { PokeBotaoBatalhaComponent } from './poke-botao-batalha/poke-botao-batalha.component';
 import { PokeDesafianteComponent } from './poke-desafiante/poke-desafiante.component';
 
 
@@ -19,7 +19,7 @@ import { PokeDesafianteComponent } from './poke-desafiante/poke-desafiante.compo
     PokeHeaderComponent,
     PokeSearchComponent,
     PokeListComponent,
-    PokeBatalhaComponent,
+    PokeBotaoBatalhaComponent,
     PokeDesafianteComponent
   ],
   exports: [
@@ -29,7 +29,7 @@ import { PokeDesafianteComponent } from './poke-desafiante/poke-desafiante.compo
   ],
   imports: [
     CommonModule,
-    RouterModule, 
+    RouterModule,
     MatDialogModule,
     MatButtonModule
   ]

@@ -3,11 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { PokeDesafianteComponent } from '../poke-desafiante/poke-desafiante.component';
 
 @Component({
-  selector: 'poke-batalha',
-  templateUrl: './poke-batalha.component.html',
-  styleUrls: ['./poke-batalha.component.scss']
+  selector: 'poke-botao-batalha',
+  templateUrl: './poke-botao-batalha.component.html',
+  styleUrls: ['./poke-botao-batalha.component.scss']
 })
-export class PokeBatalhaComponent implements OnInit {
+export class PokeBotaoBatalhaComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog
