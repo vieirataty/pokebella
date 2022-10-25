@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PokeDesafianteComponent } from '../poke-desafiante/poke-desafiante.component';
+//import { PokeDesafianteComponent } from './poke-desafiante/poke-desafiante.component';
 
 @Component({
   selector: 'poke-botao-batalha',
@@ -16,10 +16,10 @@ export class PokeBotaoBatalhaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(
-      PokeDesafianteComponent
-    )
-  }
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(
+  //     PokeDesafianteComponent
+  //   )
+  // }
 
 }

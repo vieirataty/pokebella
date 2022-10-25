@@ -9,18 +9,18 @@ import { BatalhaComponent } from './batalha/batalha.component';
 
 const routes: Routes = [
   {
-    path:'', 
+    path:'',
     component: HomeComponent
   },
   {
-    path:'details/:id', 
+    path:'details/:id',
     component: DetailsComponent
   },
   {
-    path:'batalha/',
+    path:'batalha/:id',
     component: BatalhaComponent
   },
-  
+
 ];
 
 @NgModule({
